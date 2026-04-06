@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ford Janakpur - Premium Dealership</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #030712;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: linear-gradient(to bottom, #030712 60%, rgba(3, 7, 18, 0.5) 100%);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.875rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+        }
+
+        .logo span.blue {
+            color: #2563eb;
+        }
+
+        .logo span.white {
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .nav-links button {
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links button:hover {
+            color: #60a5fa;
+        }
+
+        .book-btn {
+            padding: 0.625rem 1.5rem;
+            background: linear-gradient(to right, #2563eb, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .book-btn:hover {
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            padding-top: 6rem;
+            padding-bottom: 3rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24rem;
+            height: 24rem;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            filter: blur(3rem);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 24rem;
+            height: 24rem;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 50%;
+            filter: blur(3rem);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .hero-tag {
+            color: #60a5fa;
+            font-weight: 700;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: #94a3b8;
+            line-height: 1.8;
+            max-width: 28rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 2rem 0;
+        }
+
+        .spec-item {
+            border-left: 2px solid #2563eb;
+            padding-left: 1rem;
+        }
+
+        .spec-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        .spec-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+
+        .color-selector {
+            margin: 2rem 0;
+        }
+
+        .color-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .color-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .color-btn {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            border: 2px solid;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform: scale(1);
+        }
+
+        .color-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .color-btn.active {
+            transform: scale(1.2);
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+
+        .color-name {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            padding-top: 1.5rem;
+        }
+
+        .btn-primary {
+            flex: 1;
+            padding: 1rem 2rem;
+            background: linear-gradient(to right, #2563eb, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.5);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            flex: 1;
+            padding: 1rem 2rem;
+            border: 2px solid #2563eb;
+            color: white;
+            background: transparent;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .price-section {
+            padding-top: 2rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .price-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 3.75rem;
+            font-weight: 900;
+            color: #60a5fa;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 24rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-backdrop {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.2), transparent);
+            border-radius: 1.5rem;
+            filter: blur(2rem);
+        }
+
+        /* ===== UPGRADED: smooth color + transform transition ===== */
+        .hero-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.5));
+            transition: transform 0.5s ease, filter 0.6s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* ==================== INVENTORY SECTION ==================== */
+        .inventory {
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom, #0f172a, #030712);
+        }
+
+        .inventory-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .inventory-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+        }
+
+        .inventory-title {
+            flex: 1;
+        }
+
+        .inventory-title h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .inventory-title p {
+            color: #64748b;
+        }
+
+        .view-all-btn {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #2563eb;
+            color: #60a5fa;
+            background: transparent;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-all-btn:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .inventory-card {
+            position: relative;
+            background: #0f172a;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .inventory-card:hover {
+            box-shadow: 0 20px 25px rgba(37, 99, 235, 0.2);
+            transform: scale(1.05);
+        }
+
+        .inventory-image {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            overflow: hidden;
+            background: #1e293b;
+        }
+
+        .inventory-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+
+        .inventory-card:hover .inventory-image img {
+            filter: brightness(1.2);
+        }
+
+        .inventory-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(3, 7, 18, 1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .inventory-card:hover .inventory-overlay {
+            opacity: 1;
+        }
+
+        .inventory-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 0.75rem;
+            background: #2563eb;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .inventory-details {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            transform: translateY(2rem);
+            transition: transform 0.3s ease;
+        }
+
+        .inventory-card:hover .inventory-details {
+            transform: translateY(0);
+        }
+
+        .inventory-details h3 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .inventory-price {
+            color: #60a5fa;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .explore-btn {
+            width: 100%;
+            padding: 0.5rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* ==================== TEST DRIVE SECTION ==================== */
+        .test-drive {
+            padding: 5rem 2rem;
+            background: linear-gradient(to right, rgba(30, 58, 138, 0.3), #030712);
+        }
+
+        .test-drive-container {
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        .test-drive-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .test-drive-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .test-drive-header p {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid #1e293b;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            border-color: #2563eb;
+        }
+
+        .benefit-icon {
+            width: 3rem;
+            height: 3rem;
+            margin: 0 auto 1rem;
+            color: #60a5fa;
+        }
+
+        .benefit-card h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .test-drive-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to right, #2563eb, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .test-drive-btn:hover {
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: 5rem 2rem;
+            background: #0f172a;
+        }
+
+        .contact-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: #030712;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid #1e293b;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: #2563eb;
+        }
+
+        .contact-icon {
+            width: 2rem;
+            height: 2rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card .value {
+            color: #60a5fa;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card .subtitle {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .contact-cta {
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.2), #030712);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-cta p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta button {
+            padding: 0.75rem 2rem;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-cta button:hover {
+            background: #1d4ed8;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        /* ==================== MODAL ==================== */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #030712;
+            border-radius: 1rem;
+            max-width: 28rem;
+            width: 100%;
+            border: 1px solid #1e293b;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+        }
+
+        .modal-header {
+            font-size: 1.875rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .form-group input::placeholder {
+            color: #64748b;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .modal-buttons button {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .confirm-btn {
+            background: linear-gradient(to right, #2563eb, #3b82f6);
+            color: white;
+        }
+
+        .confirm-btn:hover {
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .cancel-btn {
+            border: 1px solid #1e293b !important;
+            color: white;
+            background: transparent;
+        }
+
+        .cancel-btn:hover {
+            border-color: #334155 !important;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            border-top: 1px solid #1e293b;
+            background: #030712;
+            padding: 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .footer-container p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-links button {
+            background: none;
+            border: none;
+            color: #64748b;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links button:hover {
+            color: #60a5fa;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .inventory-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .inventory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero::before,
+            .hero::after {
+                width: 12rem;
+                height: 12rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="blue">FORD</span>
+                <span class="white"> JANAKPUR</span>
+            </div>
+            <div class="nav-links">
+                <button onclick="scrollToSection('inventory')">MODELS</button>
+                <button onclick="scrollToSection('inventory')">INVENTORY</button>
+                <button onclick="openBooking()">TEST DRIVE</button>
+                <button onclick="scrollToSection('contact')">CONTACT</button>
+            </div>
+            <button class="book-btn" onclick="openBooking()">BOOK NOW</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-tag">Featured Vehicle</p>
+                <h1>Endeavour</h1>
+                <p class="hero-tagline">Experience Luxury &amp; Power</p>
+
+                <p class="hero-description">The pinnacle of performance meets sophisticated engineering. Command the road with presence and precision.</p>
+
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Power</div>
+                        <div class="spec-value">200 HP</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Engine</div>
+                        <div class="spec-value">3.2L EcoBlue</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Seating</div>
+                        <div class="spec-value">7 Persons</div>
+                    </div>
+                </div>
+
+                <div class="color-selector">
+                    <div class="color-label">Choose Your Color</div>
+                    <!-- ===== UPGRADED: 8 color buttons ===== -->
+                    <div class="color-buttons">
+                        <button class="color-btn active" style="background-color: #f8fafc; border-color: #e2e8f0;" onclick="selectColor(0, 'Pearl White')" title="Pearl White"></button>
+                        <button class="color-btn" style="background-color: #1f2937; border-color: #000;" onclick="selectColor(1, 'Deep Black')" title="Deep Black"></button>
+                        <button class="color-btn" style="background-color: #1e3a5f; border-color: #1e40af;" onclick="selectColor(2, 'Royal Blue')" title="Royal Blue"></button>
+                        <button class="color-btn" style="background-color: #d1d5db; border-color: #9ca3af;" onclick="selectColor(3, 'Liquid Silver')" title="Liquid Silver"></button>
+                        <button class="color-btn" style="background-color: #dc2626; border-color: #991b1b;" onclick="selectColor(4, 'Energetic Red')" title="Energetic Red"></button>
+                        <button class="color-btn" style="background-color: #16a34a; border-color: #15803d;" onclick="selectColor(5, 'Forest Green')" title="Forest Green"></button>
+                        <button class="color-btn" style="background-color: #ea580c; border-color: #c2410c;" onclick="selectColor(6, 'Deep Orange')" title="Deep Orange"></button>
+                        <button class="color-btn" style="background-color: #7c3aed; border-color: #6d28d9;" onclick="selectColor(7, 'Royal Purple')" title="Royal Purple"></button>
+                    </div>
+                    <div class="color-name" id="colorName">Pearl White</div>
+                </div>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="openBooking()">BOOK TEST DRIVE</button>
+                    <button class="btn-secondary">VIEW SPECS</button>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-label">Starting From</div>
+                    <div class="price">₹28,50,000</div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-backdrop"></div>
+                <img src="https://i.ibb.co/RG0hTBJZ/images.jpg" alt="Endeavour">
+            </div>
+        </div>
+    </section>
+
+    <!-- INVENTORY SECTION -->
+    <section class="inventory" id="inventory">
+        <div class="inventory-container">
+            <div class="inventory-header">
+                <div class="inventory-title">
+                    <h2>OUR INVENTORY</h2>
+                    <p>Explore our complete range of Ford vehicles</p>
+                </div>
+                <button class="view-all-btn">View All →</button>
+            </div>
+
+            <div class="inventory-grid">
+                <div class="inventory-card">
+                    <div class="inventory-image">
+                        <img src="https://i.ibb.co/wNtp1Qpd/20211101-1635777197-283-3-auto.png" alt="Freestyle">
+                    </div>
+                    <div class="inventory-overlay"></div>
+                    <span class="inventory-badge">COMPACT SUV</span>
+                    <div class="inventory-details">
+                        <h3>Freestyle</h3>
+                        <div class="inventory-price">₹9,25,000</div>
+                        <button class="explore-btn">EXPLORE</button>
+                    </div>
+                </div>
+
+                <div class="inventory-card">
+                    <div class="inventory-image">
+                        <img src="https://i.ibb.co/mVGP7xtJ/Ford-Figo-Aspire-1-5-D-Titanium-Plus-MT.jpg" alt="Aspire">
+                    </div>
+                    <div class="inventory-overlay"></div>
+                    <span class="inventory-badge">SEDAN</span>
+                    <div class="inventory-details">
+                        <h3>Aspire</h3>
+                        <div class="inventory-price">₹10,50,000</div>
+                        <button class="explore-btn">EXPLORE</button>
+                    </div>
+                </div>
+
+                <div class="inventory-card">
+                    <div class="inventory-image">
+                        <img src="https://i.ibb.co/PGbmDqqf/images-1.jpg" alt="Figo">
+                    </div>
+                    <div class="inventory-overlay"></div>
+                    <span class="inventory-badge">HATCHBACK</span>
+                    <div class="inventory-details">
+                        <h3>Figo</h3>
+                        <div class="inventory-price">₹6,75,000</div>
+                        <button class="explore-btn">EXPLORE</button>
+                    </div>
+                </div>
+
+                <div class="inventory-card">
+                    <div class="inventory-image">
+                        <img src="https://i.ibb.co/rRrNSgmJ/Ford-Ranger-1591674939-714.jpg" alt="Ranger">
+                    </div>
+                    <div class="inventory-overlay"></div>
+                    <span class="inventory-badge">PICKUP TRUCK</span>
+                    <div class="inventory-details">
+                        <h3>Ranger</h3>
+                        <div class="inventory-price">₹14,25,000</div>
+                        <button class="explore-btn">EXPLORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEST DRIVE SECTION -->
+    <section class="test-drive">
+        <div class="test-drive-container">
+            <div class="test-drive-header">
+                <h2>READY TO DRIVE?</h2>
+                <p>Book a test drive and experience the difference</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <svg class="benefit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <h3>FLEXIBLE SCHEDULING</h3>
+                    <p>Choose a date and time that works for you</p>
+                </div>
+
+                <div class="benefit-card">
+                    <svg class="benefit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948-.684l1.498-4.493a1 1 0 011.502-.684l1.498 4.493a1 1 0 00.948.684H19a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
+                    </svg>
+                    <h3>INSTANT CONFIRMATION</h3>
+                    <p>Get confirmation directly to your phone</p>
+                </div>
+
+                <div class="benefit-card">
+                    <svg class="benefit-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <h3>AT OUR LOCATION</h3>
+                    <p>Visit us at Janakpur showroom</p>
+                </div>
+            </div>
+
+            <button class="test-drive-btn" onclick="openBooking()">SCHEDULE YOUR TEST DRIVE</button>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>GET IN TOUCH</h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 00.684-.948V5a2 2 0 00-2-2h-2.28a1 1 0 00-.948.684m0 0L9 4m0 0l4.884 2.884m-5.772 0a11.04 11.04 0 01-.528-1.582"></path>
+                    </svg>
+                    <h3>CALL US</h3>
+                    <div class="value">+977-1-234-5678</div>
+                    <div class="subtitle">Available 9 AM - 7 PM, Mon-Sun</div>
+                </div>
+
+                <div class="contact-card">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <h3>EMAIL US</h3>
+                    <div class="value">info@fordjanakpur.com</div>
+                    <div class="subtitle">We'll respond within 24 hours</div>
+                </div>
+
+                <div class="contact-card">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <h3>VISIT US</h3>
+                    <div class="value">Janakpur, Nepal</div>
+                    <div class="subtitle">Premium Ford Showroom</div>
+                </div>
+            </div>
+
+            <div class="contact-cta">
+                <p>Have questions? Our team is here to help!</p>
+                <button onclick="openBooking()">CONTACT US</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING MODAL -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">BOOK TEST DRIVE</div>
+
+            <form onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" required placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="+977 98...">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Select Model</label>
+                    <select id="model" required>
+                        <option>Freestyle</option>
+                        <option>Aspire</option>
+                        <option>Figo</option>
+                        <option>Ranger</option>
+                        <option>Endeavour</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="submit" class="confirm-btn">CONFIRM BOOKING</button>
+                    <button type="button" class="cancel-btn" onclick="closeBooking()">CANCEL</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2024 Ford Janakpur. All rights reserved. | Engineered for Performance</p>
+            <div class="footer-links">
+                <button>Privacy Policy</button>
+                <button>Terms of Service</button>
+                <button>Follow Us</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function openBooking() {
+            document.getElementById('bookingModal').classList.add('active');
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').classList.remove('active');
+        }
+
+        // ===== UPGRADED: 8-color selector with smooth CSS filter transitions =====
+        function selectColor(index, name) {
+            document.querySelectorAll('.color-btn').forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            document.getElementById('colorName').textContent = name;
+
+            const heroImage = document.querySelector('.hero-image img');
+
+            if (index === 0) { // Pearl White
+                heroImage.style.filter = 'brightness(1.15) saturate(0.75) contrast(1.05) drop-shadow(0 20px 25px rgba(0, 0, 0, 0.5))';
+            } else if (index === 1) { // Deep Black
+                heroImage.style.filter = 'brightness(0.65) saturate(1.2) contrast(1.1) drop-shadow(0 20px 25px rgba(0, 0, 0, 0.8))';
+            } else if (index === 2) { // Royal Blue
+                heroImage.style.filter = 'hue-rotate(210deg) saturate(1.4) brightness(0.93) contrast(1.05) drop-shadow(0 20px 25px rgba(37, 99, 235, 0.3))';
+            } else if (index === 3) { // Liquid Silver
+                heroImage.style.filter = 'brightness(1.22) grayscale(0.35) contrast(1.08) drop-shadow(0 20px 25px rgba(200, 200, 200, 0.2))';
+            } else if (index === 4) { // Energetic Red
+                heroImage.style.filter = 'hue-rotate(5deg) saturate(1.5) brightness(0.95) contrast(1.08) drop-shadow(0 20px 25px rgba(220, 38, 38, 0.3))';
+            } else if (index === 5) { // Forest Green
+                heroImage.style.filter = 'hue-rotate(130deg) saturate(1.4) brightness(0.92) contrast(1.08) drop-shadow(0 20px 25px rgba(22, 163, 74, 0.3))';
+            } else if (index === 6) { // Deep Orange
+                heroImage.style.filter = 'hue-rotate(25deg) saturate(1.6) brightness(0.95) contrast(1.1) drop-shadow(0 20px 25px rgba(234, 88, 12, 0.3))';
+            } else if (index === 7) { // Royal Purple
+                heroImage.style.filter = 'hue-rotate(270deg) saturate(1.5) brightness(0.90) contrast(1.08) drop-shadow(0 20px 25px rgba(124, 58, 237, 0.3))';
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const model = document.getElementById('model').value;
+            const date = document.getElementById('date').value;
+
+            alert(`Thank you ${name}! We will contact you shortly to confirm your test drive for ${model}.`);
+
+            event.target.reset();
+            closeBooking();
+        }
+
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeBooking();
+            }
+        });
+    </script>
+
+</body>
+</html>
